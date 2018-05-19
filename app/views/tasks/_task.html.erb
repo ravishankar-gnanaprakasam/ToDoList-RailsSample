@@ -1,0 +1,10 @@
+<li id="<%= task.id %>">
+  <span class="content"><%= task.content %> </span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(task.updated_at) %> ago.
+  </span>
+  <% if current_user?(task.user) %>
+    <%= link_to "Edit", edit_task_path(task) %>
+    <%= link_to "Delete", task, method: :delete %>
+  <% end %>
+</li>

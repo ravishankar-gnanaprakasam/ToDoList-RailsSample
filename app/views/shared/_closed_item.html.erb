@@ -1,0 +1,10 @@
+<li id="<%= closed_item.id %>">
+  <span class="content"><%= closed_item.content %> </span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(closed_item.updated_at) %> ago.
+  </span>
+  <% if current_user?(closed_item.user) %>
+    <%= link_to "Edit", edit_task_path(closed_item) %>
+    <%= link_to "Delete", closed_item, method: :delete %>
+  <% end %>
+</li>

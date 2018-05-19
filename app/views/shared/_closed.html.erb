@@ -1,0 +1,5 @@
+<% if @closed_items.any? %>
+  <ol class="tasks">
+    <%= render partial: 'shared/closed_item', collection: @closed_items %>
+  </ol>
+<% end %>

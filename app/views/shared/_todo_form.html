@@ -1,0 +1,9 @@
+<%= form_for(@task) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.select(:status, options_for_select([['Open', 'Open'], ['Closed', 'Closed']])) %>
+    <%= f.text_field :target_dt, placeholder: 'dd/mm/yyyy' %>
+    <%= f.text_area :content, placeholder: "Compose Tasks..." %>
+  </div>
+  <%= f.submit "Add", class: "btn btn-large btn-primary" %>
+<% end %>
