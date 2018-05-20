@@ -22,14 +22,12 @@ class User < ActiveRecord::Base
 
   def open_items
     #Task.where("user_id = ? and status = ? and updated_at >= ?", id, "Open", Time.zone.now.beginning_of_day)
-    Task.where("user_id = ? and status = ? and DATE(substr(target_dt,7,4)||'-'||substr(target_dt,4,2)
-                ||'-'||substr(target_dt,1,2)) = ?", id, "Open", Date.today.to_s)
+    Task.where(AppConstants::OPEN_ITEMS_QUERY, id, AppConstants::OPEN_STATUS_VALUE, Date.today.to_s)
   end
 
   def closed_items
     #Task.where("user_id = ? and status = ? and updated_at >= ?", id, "Closed", Time.zone.now.beginning_of_day)
-    Task.where("user_id = ? and status = ? and DATE(substr(target_dt,7,4)||'-'||substr(target_dt,4,2)
-                ||'-'||substr(target_dt,1,2)) = ?", id, "Closed", Date.today.to_s)
+    Task.where(AppConstants::CLOSED_ITEMS_QUERY, id, AppConstants::CLOSED_STATUS_VALUE, Date.today.to_s)
   end
 
 
