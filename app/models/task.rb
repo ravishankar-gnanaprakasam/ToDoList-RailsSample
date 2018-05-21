@@ -31,9 +31,9 @@ class Task < ActiveRecord::Base
   	# end
 
   	def trigger_mail
-  		unless self.changes[:status].nil?
+  		if !self.changes[:status].nil? && self.changes[:status][1] == AppConstants::CLOSED_STATUS_VALUE
   			# NotificationMailer.notify_email(user).deliver
-        MailWorker.perform_async(user.name)
+        MailWorker.perform_async(user.name, self.content)
   		end
   	end
 

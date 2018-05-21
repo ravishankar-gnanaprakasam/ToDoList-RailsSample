@@ -52,5 +52,4 @@ TodoList::Application.configure do
 
 
 
-
 end
