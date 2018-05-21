@@ -6,7 +6,7 @@ module AppConstants
 end
 
 module MailConstants
-	FROM_MAIL = "ravi@development.com".freeze
+	FROM_MAIL = 'ravishankar@dev.com'.freeze
 	TO_MAIL = 'ravishankar2kool@gmail.com'.freeze
-	STATUS_CHANGE_SUBJECT = "Status Change".freeze
+	STATUS_CHANGE_SUBJECT = 'Status Change'.freeze
 end

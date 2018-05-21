@@ -37,23 +37,19 @@ TodoList::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
+  # Add your email username and password in the below config to trigger email on status change
+  # Also make the appropriate changes in the constants/appconstants.rb file
+
   # config.action_mailer.smtp_settings = {
   #  :address              => "smtp.gmail.com",
   #  :port                 => 587,
-  #  :user_name            => '', #your email
+  #  :user_name            => 'ravishankar2kool', #your email
   #  :password             => '', #your email password
   #  :authentication       => "plain",
   # :enable_starttls_auto => true
   # }
 
-  config.action_mailer.smtp_settings = {
-    :authentication => :plain,
-    :address => "smtp.mailgun.org",
-    :port => 587,
-    :domain => "development.mailer.org",
-    :user_name => "postmaster@development.mailer.org",
-    :password => "f1468e3d3e9c1f19277c248ce92ee026-a909d4a1-14c9d6e3"
-  }
+
 
 
 
